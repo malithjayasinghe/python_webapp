@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import oauth from 'axios-oauth-client';
 import axios from 'axios';
 const API_URL = window?.configs?.serviceURL ? window.configs.serviceURL : "/";
-const tokenUrl = window?.configs?.serviceURL ? window.configs.tokenUrl : "/";
-const consumerKey = window?.configs?.serviceURL ? window.configs.consumerKey : "/";
-const consumerSecret = window?.configs?.serviceURL ? window.configs.consumerSecret : "/";
+const tokenUrl = window?.configs?.tokenURL ? window.configs.tokenURL : "/";
+const consumerKey = window?.configs?.consumerKey ? window.configs.consumerKey : "/";
+const consumerSecret = window?.configs?.consumerSecret ? window.configs.consumerSecret : "/";
 
 
 function AddTrade() {
@@ -24,7 +24,6 @@ function AddTrade() {
   };
 
 
-  //sample nodeJS code snippet
 
 
 
@@ -41,11 +40,11 @@ function AddTrade() {
     const accessToken = auth.access_token;
 
 
-    axios.post(`${API_URL}/trading/trades`, {
+    axios.post(`${API_URL}/trading/trades` ,tradeData,{
         headers: {
           'Authorization': `Bearer ${accessToken}`
         }
-    },tradeData)
+    })
       .then(response => {
         console.log('Trade added:', response.data);
       })
