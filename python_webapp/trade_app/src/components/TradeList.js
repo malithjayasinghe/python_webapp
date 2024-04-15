@@ -19,18 +19,20 @@ async function TradeList() {
   const accessToken = auth.access_token;
 
   useEffect(() => {
-    axios.get(`${API_URL}/trading/trades`, {
+    if (accessToken) { // Ensure accessToken is available before making the call
+      axios.get(`${API_URL}/trading/trades`, {
         headers: {
           'Authorization': `Bearer ${accessToken}`
         }
-    })
+      })
       .then(response => {
         setTrades(response.data.trades);
       })
       .catch(error => {
         console.error('Error fetching trades', error);
       });
-  }, []);
+    }
+  }, [accessToken]);
 
   return (
     <div>
