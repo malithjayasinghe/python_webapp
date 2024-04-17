@@ -1,3 +1,3 @@
 window.configs = {
-    serviceURL: 'https://b0d941db-e69a-46ae-b4bc-8d65010bd7de-dev.e1-us-east-azure.preview-dv.choreoapis.dev/demotrial/trade/v1.0'
+    serviceURL: 'https://055de5b4-7b8b-4619-9064-34e6b1df9094-dev.e1-us-east-azure.choreoapis.dev/trading-app/tradingapp-service/stock-trading-rest-endpoint-8ba/v1.0'
 };
